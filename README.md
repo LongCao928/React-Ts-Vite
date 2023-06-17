@@ -1,6 +1,6 @@
 # React-Ts-Vite
 
-基于 Vite + Ts + React-router 构建的 React 基础模板
+基于 Vite + Ts + React Router 构建的 React 基础模板
 
 ## 🚀 开发
 
