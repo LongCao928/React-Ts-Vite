@@ -42,7 +42,7 @@ function Layout() {
           </li>
         </ul>
       </nav>
-      <hr />
+      {/* <hr /> */}
       <Outlet />
     </div>
   )

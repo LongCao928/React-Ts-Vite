@@ -7,12 +7,18 @@ import {
 const router = createBrowserRouter([
   {
     path: '/',
-    loader: () => ({ message: 'Hello Data Router!' }),
+    loader: () => ({ message: 'Basic Data Router' }),
     Component() {
       const data = useLoaderData() as { message: string }
       return <h1>{data.message}</h1>
     },
   },
+  /*{
+    path: '*',
+    Component() {
+      return <h2>404</h2>
+    },
+  },*/
 ])
 
 export default function App() {
