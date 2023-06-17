@@ -1,6 +1,6 @@
 # React-Ts-Vite
 
-基于 Vite + Ts 构建的 React 基础模板
+基于 Vite + Ts + React-router 构建的 React 基础模板
 
 ## 🚀 开发
 
@@ -55,10 +55,10 @@ npm run lint
    │─ App.tsx // 根容器
    │─ main.tsx // 入口文件
    │─ vite-env.d.ts // 定义全局类型
+   ├─ router // 路由
 
    ├─ components // 组件
    ├─ views // 页面
-   ├─ router // 路由
    ├─ stores // pinia 状态
    ├─ servers // 服务
    ├─ utils // 公用方法
