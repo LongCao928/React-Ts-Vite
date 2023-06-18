@@ -5,10 +5,14 @@ import { BrowserRouter } from 'react-router-dom'
 import BasicRouter from './routers/basic/index.tsx'
 import BasicDataRouter from './routers/basic-data-router/index.tsx'
 import './index.css'
+import store from './store/index'
+import { Provider } from 'react-redux'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
     <hr />
     <BrowserRouter>
       <BasicRouter></BasicRouter>
