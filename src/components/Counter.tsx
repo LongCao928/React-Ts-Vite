@@ -4,6 +4,7 @@
 import { useAppDispatch, useAppSelector } from '../hook'
 import { increment, decrement } from '../store/counterSlice'
 // import type { RootState } from '../store/index'
+import '@/styles/components/counter.less'
 
 export default function Counter() {
   // const count = useSelector((state: RootState) => state.counter.value)
