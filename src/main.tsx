@@ -7,6 +7,7 @@ import BasicDataRouter from './routers/basic-data-router/index.tsx'
 import './index.css'
 import store from './store/index'
 import { Provider } from 'react-redux'
+import UseAntd from './components/useAntd.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -20,5 +21,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <hr />
     <BasicDataRouter></BasicDataRouter>
     {/* use antd */}
+    <UseAntd />
   </React.StrictMode>
 )
