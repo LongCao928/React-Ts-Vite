@@ -1,6 +1,6 @@
 # React-Ts-Vite
 
-基于 Vite + Ts + Router + ReduxToolkit + AntDesign 构建的 React 基础模板
+基于 Vite + Ts + ReactRouter + ReduxToolkit + AntDesign 构建的 React 基础模板
 
 ## 🚀 开发
 
