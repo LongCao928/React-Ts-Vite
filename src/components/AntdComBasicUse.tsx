@@ -1,5 +1,20 @@
 import { Button, Space } from 'antd'
-import { SearchOutlined } from '@ant-design/icons'
+import {
+  SearchOutlined,
+  UsergroupAddOutlined,
+  ChromeFilled,
+  AlipayCircleFilled,
+  UsbTwoTone,
+  RedoOutlined,
+  LoadingOutlined,
+  HeartTwoTone,
+  createFromIconfontCN, // 使用 iconfont 图标
+} from '@ant-design/icons'
+
+const Iconfont = createFromIconfontCN({
+  scriptUrl: '//at.alicdn.com/t/font_3387618_v2slvmt19r.js',
+})
+
 export default function AntdComBasicUse() {
   const handleButonClick = () => {
     console.log('危险')
@@ -29,7 +44,16 @@ export default function AntdComBasicUse() {
           </Button>
         </Space>
       </div>
-      <div className="component-area"></div>
+      <div className="component-area">
+        <UsergroupAddOutlined />
+        <ChromeFilled />
+        <AlipayCircleFilled />
+        <UsbTwoTone />
+        <RedoOutlined spin />
+        <LoadingOutlined />
+        <HeartTwoTone twoToneColor="#eb2f96" className="" />
+        <Iconfont type="icon-youkachongzhi" />
+      </div>
     </>
   )
 }
