@@ -5,10 +5,10 @@ import './App.css'
 import Counter from './components/Counter.tsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState<number>(0)
 
   return (
-    <>
+    <div className="root-app">
       <div>
         <a href="https://vitejs.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
@@ -30,7 +30,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <Counter />
-    </>
+    </div>
   )
 }
 
