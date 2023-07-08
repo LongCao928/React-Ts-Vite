@@ -1,4 +1,4 @@
-import { Button, Space, Typography } from 'antd'
+import { Button, Space, Typography, Divider } from 'antd'
 import {
   SearchOutlined,
   UsergroupAddOutlined,
@@ -25,13 +25,13 @@ export default function AntdComBasicUse() {
     <>
       <style>
         {`
-          .compont-area {
+          .component-area {
             margin: 15px 0;
             text-align: center;
           }
         `}
       </style>
-      <div className="compont-area">
+      <div className="component-area">
         <Space align="start" size={10}>
           <Button type="primary">主按钮</Button>
           <Button>默认</Button>
@@ -62,13 +62,16 @@ export default function AntdComBasicUse() {
           <Title>标题1</Title>
           <Paragraph>
             段落内容1 &nbsp;
+            <Divider type="vertical" />
             <Link href="https://ant.design" target="_blank">
               Ant Design (Link)
             </Link>
           </Paragraph>
+          <Divider>分割线</Divider>
           <Title level={2}>标题2</Title>
           <Paragraph>
             段落内容2
+            <Divider type="vertical" />
             <Text code>code</Text>
             <Text keyboard>keyboard</Text>
             <Text delete>delete</Text>
