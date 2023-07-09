@@ -11,7 +11,8 @@ import {
   createFromIconfontCN, // 使用 iconfont 图标
 } from '@ant-design/icons'
 
-console.log('APP-NAME:' + import.meta.env.VITE_APP_NAME)
+console.log('APP-NAME:' + import.meta.env.VITE_APP_NAME) // APP-NAME:REACT-TS-VITE
+console.log(import.meta.env.VITE_APP_TITLE) // REACT$18.0
 
 const Iconfont = createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_3387618_v2slvmt19r.js',
