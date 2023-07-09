@@ -1,4 +1,4 @@
-import { Space, Col, Row, Layout } from 'antd'
+import { Space, Col, Row, Layout, Anchor } from 'antd'
 import '@/styles/antd/antdComponent.less'
 
 const { Header, Footer, Sider, Content } = Layout
@@ -65,6 +65,36 @@ export function AntdComponent() {
             </Layout>
           </Layout>
         </Space>
+      </div>
+      <div className="mg">
+        <Row>
+          <Col span={16}>
+            <div
+              id="part-1"
+              style={{ height: '500px', background: 'lightpink' }}
+            />
+            <div
+              id="part-2"
+              style={{ height: '500px', background: 'lightgray' }}
+            />
+          </Col>
+          <Col span={8}>
+            <Anchor
+              items={[
+                {
+                  key: 'part-1',
+                  href: '#part-1',
+                  title: 'Part 1',
+                },
+                {
+                  key: 'part-2',
+                  href: '#part-2',
+                  title: 'Part 2',
+                },
+              ]}
+            ></Anchor>
+          </Col>
+        </Row>
       </div>
     </>
   )
