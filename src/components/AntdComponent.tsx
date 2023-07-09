@@ -1,4 +1,15 @@
-import { Space, Col, Row, Layout, Anchor } from 'antd'
+import {
+  Space,
+  Col,
+  Row,
+  Layout,
+  Anchor,
+  Breadcrumb,
+  Dropdown,
+  MenuProps,
+  Button,
+} from 'antd'
+import { HomeOutlined, UserOutlined } from '@ant-design/icons'
 import '@/styles/antd/antdComponent.less'
 
 const { Header, Footer, Sider, Content } = Layout
@@ -32,6 +43,45 @@ const footerStyle: React.CSSProperties = {
   color: '#fff',
   backgroundColor: '#7dbcea',
 }
+
+const items: MenuProps['items'] = [
+  {
+    key: '1',
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.antgroup.com"
+      >
+        1st menu item
+      </a>
+    ),
+  },
+  {
+    key: '2',
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.aliyun.com"
+      >
+        2nd menu item
+      </a>
+    ),
+  },
+  {
+    key: '3',
+    label: (
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.luohanacademy.com"
+      >
+        3rd menu item
+      </a>
+    ),
+  },
+]
 
 export function AntdComponent() {
   return (
@@ -96,6 +146,53 @@ export function AntdComponent() {
           </Col>
         </Row>
       </div>
+      <div className="mg">
+        <Breadcrumb
+          items={[
+            {
+              href: '',
+              title: <HomeOutlined />,
+            },
+            {
+              href: '',
+              title: (
+                <>
+                  <UserOutlined />
+                  <span>Application List</span>
+                </>
+              ),
+            },
+            {
+              title: 'Application',
+            },
+          ]}
+        ></Breadcrumb>
+      </div>
+      <div className="mg">
+        <Dropdown
+          menu={{ items }}
+          placement="bottomLeft"
+          arrow={{ pointAtCenter: true }}
+        >
+          <Button>bottomLeft</Button>
+        </Dropdown>
+        <Dropdown menu={{ items }} placement="bottom" arrow>
+          <Button>bottom</Button>
+        </Dropdown>
+        <Dropdown menu={{ items }} placement="bottomRight" arrow>
+          <Button>bottomRight</Button>
+        </Dropdown>
+        <Dropdown menu={{ items }} placement="topLeft" arrow>
+          <Button>topLeft</Button>
+        </Dropdown>
+        <Dropdown menu={{ items }} placement="top" arrow>
+          <Button>top</Button>
+        </Dropdown>
+        <Dropdown menu={{ items }} placement="topRight" arrow>
+          <Button>topRight</Button>
+        </Dropdown>
+      </div>
+      {/* Menu导航 Pagination分页 Steps步骤条 */}
     </>
   )
 }
