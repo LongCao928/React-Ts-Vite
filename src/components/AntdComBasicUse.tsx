@@ -32,6 +32,9 @@ export default function AntdComBasicUse() {
             margin: 15px 0;
             text-align: center;
           }
+          .component-area span {
+            margin: 0 10px;
+          }
         `}
       </style>
       <div className="component-area">
@@ -60,7 +63,7 @@ export default function AntdComBasicUse() {
         <HeartTwoTone twoToneColor="#eb2f96" className="" />
         <Iconfont type="icon-youkachongzhi" />
       </div>
-      <div>
+      <div className="component-area">
         <Typography>
           <Title>标题1</Title>
           <Paragraph>
