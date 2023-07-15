@@ -8,8 +8,18 @@ import {
   Dropdown,
   MenuProps,
   Button,
+  Menu,
+  Pagination,
+  Steps,
 } from 'antd'
-import { HomeOutlined, UserOutlined } from '@ant-design/icons'
+import { useState } from 'react'
+import {
+  HomeOutlined,
+  UserOutlined,
+  MailOutlined,
+  AppstoreOutlined,
+  SettingOutlined,
+} from '@ant-design/icons'
 import '@/styles/antd/antdComponent.less'
 
 const { Header, Footer, Sider, Content } = Layout
@@ -83,7 +93,72 @@ const items: MenuProps['items'] = [
   },
 ]
 
+const menuItems: MenuProps['items'] = [
+  {
+    label: 'Navigation One',
+    key: 'mail',
+    icon: <MailOutlined />,
+  },
+  {
+    label: 'Navigation Two',
+    key: 'app',
+    icon: <AppstoreOutlined />,
+    disabled: true,
+  },
+  {
+    label: 'Navigation Three - Submenu',
+    key: 'SubMenu',
+    icon: <SettingOutlined />,
+    children: [
+      {
+        type: 'group',
+        label: 'Item 1',
+        children: [
+          {
+            label: 'Option 1',
+            key: 'setting:1',
+          },
+          {
+            label: 'Option 2',
+            key: 'setting:2',
+          },
+        ],
+      },
+      {
+        type: 'group',
+        label: 'Item 2',
+        children: [
+          {
+            label: 'Option 3',
+            key: 'setting:3',
+          },
+          {
+            label: 'Option 4',
+            key: 'setting:4',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    label: (
+      <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
+        Navigation Four - Link
+      </a>
+    ),
+    key: 'alipay',
+  },
+]
+
+const description = 'This is a description.'
+
 export function AntdComponent() {
+  const [current, setCurrent] = useState('mail')
+
+  const onClick: MenuProps['onClick'] = (e) => {
+    console.log('click ', e)
+    setCurrent(e.key)
+  }
   return (
     <>
       <Row>
@@ -193,6 +268,44 @@ export function AntdComponent() {
         </Dropdown>
       </div>
       {/* Menu导航 Pagination分页 Steps步骤条 */}
+      <div className="mg">
+        <Menu
+          onClick={onClick}
+          selectedKeys={[current]}
+          mode="horizontal"
+          items={menuItems}
+        />
+      </div>
+      <div className="mg">
+        <Pagination
+          total={85}
+          showSizeChanger
+          showQuickJumper
+          showTotal={(total) => `Total ${total} items`}
+        ></Pagination>
+      </div>
+      <div className="mg">
+        <Steps
+          size="small"
+          direction="vertical"
+          current={1}
+          items={[
+            {
+              title: 'Finished',
+              description,
+            },
+            {
+              title: 'In Progress',
+              description,
+              subTitle: 'Left 00:00:08',
+            },
+            {
+              title: 'Waiting',
+              description,
+            },
+          ]}
+        ></Steps>
+      </div>
     </>
   )
 }
