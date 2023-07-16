@@ -1,5 +1,6 @@
-import { AutoComplete, Cascader } from 'antd'
+import { AutoComplete, Cascader, Checkbox } from 'antd'
 import { useState } from 'react'
+import type { CheckboxChangeEvent } from 'antd/es/checkbox'
 
 const mockVal = (str: string, repeat = 1) => ({
   value: str.repeat(repeat),
@@ -46,6 +47,8 @@ const CascaderOptions: CascaderOption[] = [
   },
 ]
 
+const plainOptions = ['Apple', 'Pear', 'Orange']
+
 export function AntdDataInputCom() {
   const [value, setValue] = useState('')
   const [options, setOptions] = useState<{ value: string }[]>([])
@@ -59,6 +62,10 @@ export function AntdDataInputCom() {
 
   const onChange = (data: string) => {
     setValue(data)
+  }
+
+  const checkboxChange = (e: CheckboxChangeEvent) => {
+    console.log(`checked = ${e.target.checked}`)
   }
 
   return (
@@ -85,10 +92,18 @@ export function AntdDataInputCom() {
           placeholder="input here"
         ></AutoComplete>
         <Cascader
+          className="mgr-10"
           options={CascaderOptions}
           placeholder="select Cascader"
           status="warning"
         ></Cascader>
+        <Checkbox className="mgr-10" onChange={checkboxChange}>
+          Checked
+        </Checkbox>
+        <Checkbox.Group
+          options={plainOptions}
+          defaultValue={['Apple']}
+        ></Checkbox.Group>
       </div>
     </>
   )
