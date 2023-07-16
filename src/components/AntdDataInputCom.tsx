@@ -195,6 +195,43 @@ export function AntdDataInputCom() {
        * Avatar 头像
        * Badge 徽标数
        * Calendar 日历
+       * Card 卡片
+       * Carousel 走马灯
+       * Collapse 折叠面板
+       * Descriptions 描述列表
+       * Empty 空状态
+       * Image 图片
+       * List 列表
+       * Popover 气泡
+       * QRCode 二维码
+       * Segmented 分段控制器
+       * Statistic 统计数值
+       * Table 表格
+       * Tabs 标签页
+       * Tag 标签
+       * Timeline 时间轴
+       * Tooltip 文字提示
+       * Tour 漫游式引导
+       * Tree 树形控件
+       */}
+      {/** 反馈
+       * Alert 警告提示
+       * Drawer 抽屉
+       * Message 全局提示
+       * Modal 对话框
+       * Notification 通知提醒框
+       * Popconfirm 气泡确认框
+       * Progress 进度条
+       * Result 结果
+       * Skeleton 骨架屏
+       * Spin 加载中
+       */}
+      {/** 其它
+       * Affix 固钉
+       * App 包裹组件
+       * ConfigProvider 全局化配置
+       * FloatButton 悬浮按钮
+       * Watermark 水印
        */}
     </>
   )
