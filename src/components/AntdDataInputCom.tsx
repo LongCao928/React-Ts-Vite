@@ -1,4 +1,11 @@
-import { AutoComplete, Cascader, Checkbox, ColorPicker, App } from 'antd'
+import {
+  AutoComplete,
+  Cascader,
+  Checkbox,
+  ColorPicker,
+  App,
+  DatePicker,
+} from 'antd'
 import { useState } from 'react'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'
 import type { ColorPickerProps } from 'antd/es/color-picker'
@@ -72,6 +79,8 @@ export function AntdDataInputCom() {
     console.log(`checked = ${e.target.checked}`)
   }
 
+  const { RangePicker } = DatePicker
+
   return (
     <>
       <style>
@@ -118,6 +127,8 @@ export function AntdDataInputCom() {
             message.success(`The selected color is ${color.toHexString()}`)
           }}
         />
+        <DatePicker />
+        <RangePicker />
       </div>
     </>
   )
