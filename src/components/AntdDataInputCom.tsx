@@ -5,6 +5,10 @@ import {
   ColorPicker,
   App,
   DatePicker,
+  Form,
+  Input,
+  Switch,
+  Button,
 } from 'antd'
 import { useState } from 'react'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'
@@ -81,6 +85,14 @@ export function AntdDataInputCom() {
 
   const { RangePicker } = DatePicker
 
+  const onFinish = (values: any) => {
+    console.log('Success:', values)
+  }
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo)
+  }
+
   return (
     <>
       <style>
@@ -130,6 +142,60 @@ export function AntdDataInputCom() {
         <DatePicker />
         <RangePicker />
       </div>
+      <div className="mgt-10">
+        <Form
+          name="basic"
+          labelCol={{ span: 8 }}
+          wrapperCol={{ span: 16 }}
+          style={{ maxWidth: 600 }}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            label="Username"
+            name="username"
+            rules={[{ required: true, message: 'Please input your username!' }]}
+          >
+            <Input />
+          </Form.Item>
+          <Form.Item
+            label="Password"
+            name="password"
+            rules={[{ required: true, message: 'Please input your password!' }]}
+          >
+            <Input.Password />
+          </Form.Item>
+          <Form.Item label="switch" name="switch">
+            <Switch defaultChecked />
+          </Form.Item>
+          <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </div>
+      {/** 数据录入
+       * Input 输入框
+          InputNumber 数字输入框
+          Mentios 提及
+          Radio 单选框
+          Rate 评分
+          Select 选择器
+          Slider 滑动输入条
+          Switch 开关
+          TimePicker 时间选择器
+          Transfer 穿梭框
+          TreeSelect 树选择
+          Upload 上传
+        */}
+      {/** 数据展示
+       * Avatar 头像
+       * Badge 徽标数
+       * Calendar 日历
+       */}
     </>
   )
 }
