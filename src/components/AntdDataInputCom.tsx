@@ -1,6 +1,7 @@
-import { AutoComplete, Cascader, Checkbox } from 'antd'
+import { AutoComplete, Cascader, Checkbox, ColorPicker, App } from 'antd'
 import { useState } from 'react'
 import type { CheckboxChangeEvent } from 'antd/es/checkbox'
+import type { ColorPickerProps } from 'antd/es/color-picker'
 
 const mockVal = (str: string, repeat = 1) => ({
   value: str.repeat(repeat),
@@ -51,6 +52,9 @@ const plainOptions = ['Apple', 'Pear', 'Orange']
 
 export function AntdDataInputCom() {
   const [value, setValue] = useState('')
+  const [colorValue, setColorValue] =
+    useState<ColorPickerProps['value']>('#1677ff')
+  const { message } = App.useApp()
   const [options, setOptions] = useState<{ value: string }[]>([])
   const onSelect = (data: string) => {
     console.log(`onSelect:${data}`)
@@ -104,6 +108,16 @@ export function AntdDataInputCom() {
           options={plainOptions}
           defaultValue={['Apple']}
         ></Checkbox.Group>
+      </div>
+      <div className="mgt-10">
+        <ColorPicker
+          size="large"
+          value={colorValue}
+          onChangeComplete={(color) => {
+            setColorValue(color)
+            message.success(`The selected color is ${color.toHexString()}`)
+          }}
+        />
       </div>
     </>
   )
