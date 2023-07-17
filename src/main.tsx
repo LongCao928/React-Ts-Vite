@@ -10,6 +10,7 @@ import { Provider } from 'react-redux'
 import UseAntd from './components/useAntd.tsx'
 import AntdComBasicUse from './components/AntdComBasicUse.tsx'
 import { AntdComponent } from './components/AntdComponent.tsx'
+import { AntdDataInputCom } from './components/AntdDataInputCom.tsx'
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -26,5 +27,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <UseAntd />
     <AntdComBasicUse></AntdComBasicUse>
     <AntdComponent></AntdComponent>
+    <AntdDataInputCom />
   </React.StrictMode>
 )
