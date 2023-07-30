@@ -11,6 +11,7 @@ import {
   Menu,
   Pagination,
   Steps,
+  message,
 } from 'antd'
 import { useState } from 'react'
 import {
@@ -159,8 +160,17 @@ export function AntdComponent() {
     console.log('click ', e)
     setCurrent(e.key)
   }
+
+  const [messageApi, contextHolder] = message.useMessage()
+
+  const showLoading = () => {
+    messageApi.loading({
+      content: 'loading...',
+    })
+  }
   return (
     <>
+      {contextHolder}
       <Row>
         <Col span={24}>col 24</Col>
       </Row>
@@ -306,6 +316,7 @@ export function AntdComponent() {
           ]}
         ></Steps>
       </div>
+      <Button onClick={showLoading}>loading</Button>
     </>
   )
 }

@@ -3,10 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './components/Counter.tsx'
+// import Toast from './utils/toast.tsx'
 
 function App() {
   const [count, setCount] = useState<number>(0)
-
+  // Toast.showLoading('...')
   return (
     <div className="root-app">
       <div>

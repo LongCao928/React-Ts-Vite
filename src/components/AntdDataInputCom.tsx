@@ -168,7 +168,7 @@ export function AntdDataInputCom() {
             <Input.Password />
           </Form.Item>
           <Form.Item label="switch" name="switch">
-            <Switch defaultChecked />
+            <Switch checked disabled />
           </Form.Item>
           <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
             <Button type="primary" htmlType="submit">
